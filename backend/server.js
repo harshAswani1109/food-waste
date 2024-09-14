@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const donationController = require("./controllers/donationController");
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,12 @@ app.get("/", (req, res) => {
 });
 
 //Import Routes
+const userRoutes = require("./routes/userRoutes");
+const donationRoutes = require("./routes/donationRoutes");
+
+//Use Routes
+app.use("/api/users", userRoutes);
+app.use("/api/donations", donationRoutes);
 
 //Error handling
 app.use((err, req, res, next) => {
