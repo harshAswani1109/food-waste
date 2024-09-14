@@ -28,9 +28,9 @@ module.exports = {
     return await sql`SELECT * FROM users WHERE email = ${email}`;
   },
 
-  async findUserByUsername(username) {
-    return await sql`SELECT * FROM users WHERE username = ${username}`;
-  },
+  // async findUserByUsername(username) {
+  //   return await sql`SELECT * FROM users WHERE username = ${username}`;
+  // },
 
   // async findUserByName(name) {
   //   return await sql`SELECT * FROM users WHERE name = ${name}`;
