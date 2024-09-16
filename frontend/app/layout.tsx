@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/common/navbar";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles"
+import { UserProvider } from "@/hooks/userContext";
+import Navbar from "@/components/common/navbar";
+
+const theme = createTheme();
 
 
 export const metadata: Metadata = {
@@ -15,9 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-green-400">
-        <Navbar/>
-        <div className="p-12 min-h-screen">{children}</div>
+      <body>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <UserProvider>
+            <Navbar />
+              <div className="p-12 min-h-screen">
+                {children}
+              </div>
+          </UserProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
