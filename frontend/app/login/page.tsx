@@ -33,6 +33,9 @@ const LoginPage = () => {
       // Store user data in UserContext
       setUser(data.user);
 
+      // Log user data to confirm it's set
+      console.log('User data set in context:', data.user);
+
       // Redirect to the dashboard
       router.push("/dashboard");
     } else {

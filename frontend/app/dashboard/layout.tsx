@@ -7,9 +7,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <>
         <UserProvider>
-          <div >
+          <div className="flex">
             <Sidebar />
+            <main className="p-20">
               {children}
+            </main>
           </div>
         </UserProvider>
     </>

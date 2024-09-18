@@ -20,7 +20,7 @@ const Sidebar = () => {
       <div className="overflow-auto h-full flex flex-col pt-16">
         <h1 className="text-xl font-semibold p-4">Dashboard</h1>
         <hr className="border-gray-200" />
-        <p className="text-md font-medium p-4">Hey, {user?.username ?? 'Pritam'}</p>
+        <p className="text-md font-medium p-4">Hey, {user?.username ?? ''}</p>
         <hr className="border-gray-200" />
         <nav className="flex-grow">
           <ul>
