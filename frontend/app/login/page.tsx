@@ -50,7 +50,7 @@ const LoginPage = () => {
   return (
     <div className="flex justify-center items-center h-screen w-full pt-16">
       <div className="flex w-full h-full md:w-[95vw] lg:w-[75vw] md:h-[80vh] md:rounded-xl md:overflow-hidden md:shadow-xl">
-        <div className="w-1/2 md:flex flex-col justify-center items-center hidden ">
+        <div className="w-1/2 md:flex flex-col justify-center items-center hidden">
           <Image
             src={loginImage.src}
             alt="Login Page"
