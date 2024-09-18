@@ -84,4 +84,20 @@ module.exports = {
       res.status(500).json({ message: "Error fetching donations", error });
     }
   },
+
+  async getAllDonations(req, res) {
+    try {
+      const donations = await donationModel.getDonations();
+
+      if (!donations.length) {
+        return res.status(404).json({ message: "No donations found." });
+      }
+
+      res
+        .status(200)
+        .json({ message: "Donations fetched successfully", donations });
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching donations", error });
+    }
+  },
 };

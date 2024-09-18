@@ -63,4 +63,25 @@ module.exports = {
       SELECT * FROM donations WHERE user_id = ${user_id}
     `;
   },
+
+  async getDonations() {
+    return await sql`
+      SELECT 
+        d.id as donation_id, 
+        d.donor_name, 
+        d.email, 
+        d.phone_number, 
+        d.collection_address, 
+        d.category, 
+        d.description, 
+        d.user_id, 
+        d.created_at,
+        -- Group items into a JSON array
+        json_agg(json_build_object('item_name', di.item_name, 'quantity', di.quantity)) as items
+      FROM donations d
+      LEFT JOIN donation_items di 
+        ON d.id = di.donation_id
+      GROUP BY d.id
+    `;
+  },
 };

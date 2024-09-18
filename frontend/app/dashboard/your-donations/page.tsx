@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useUser } from "@/context/UserContext";
-import veg from "@/components/assets/register.jpg";
+import veg from "@/components/assets/login.jpg";
 import nonVeg from "@/components/assets/register.jpg";
 import Image from "next/image";
 
@@ -59,10 +59,10 @@ export default function YourDonations() {
     ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {donations.map((donation) => (
-          <div key={donation.id} className="bg-white rounded-lg shadow-md overflow-hidden w-full">
+          <div key={donation.id} className="bg-white rounded-2xl shadow-md overflow-hidden w-full">
             <div className="relative h-40">
             <Image
-                src={donation.category === 'Veg' ? veg.src : nonVeg.src}
+                src={donation.category === 'veg' ? veg.src : nonVeg.src}
                 alt={donation.category}
                 fill
                 objectFit="cover"
