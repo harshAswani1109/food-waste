@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-60 bg-white border-r border-gray-200 flex flex-col h-screen ">
+    <div className="w-60 bg-white border-r border-gray-200 flex flex-col h-screen fixed z-20">
       <div className="overflow-auto h-full flex flex-col pt-16">
         <h1 className="text-xl font-semibold p-4">Dashboard</h1>
         <hr className="border-gray-200" />

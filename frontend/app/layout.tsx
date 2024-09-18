@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <UserProvider>
           <Navbar />
-          <div className="min-h-screen">
+          <div className="min-h-screen bg-[#d7eccb]">
             {children}
           </div>
         </UserProvider>

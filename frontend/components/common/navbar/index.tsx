@@ -7,7 +7,7 @@ import { useState } from 'react';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'What We Do', href: '/#fwmanage' },
-  { label: 'Get Involved', href: '/register' },
+  { label: 'Get Involved', href: '/login' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact Us', href: '/contact' },
 ];
@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#ffffff00] backdrop-blur-md shadow-md fixed w-full">
+    <nav className="bg-[#ffffff00] backdrop-blur-md shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
