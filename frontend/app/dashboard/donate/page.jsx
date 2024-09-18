@@ -5,14 +5,16 @@ import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
 
 export default function DonatePage() {
-    //   const { user } = useUser();
+      const { user } = useUser();
+    //   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const apiUrl = "http://localhost:8080/api";
 
-    const user = {
-        id: "sample123",
-        name: "John Doe",
-        email: "john@example.com",
-        phone_number: "1234567890"
-    };
+    // const user = {
+    //     id: "sample123",
+    //     name: "John Doe",
+    //     email: "john@example.com",
+    //     phone_number: "1234567890"
+    // };
     // Log user data to check if it's being set correctly
     useEffect(() => {
         console.log("User data in DonatePage:", user);
@@ -41,37 +43,43 @@ export default function DonatePage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
-            donor_name: user.name,
-            email: user.email,
-            phone_number: user.phone_number,
-            user_id: user.id,
-            collection_address: collectionAddress,
-            category,
-            description,
-            items: items.filter((item) => item.item_name && item.quantity),
+          donor_name: user.name,
+          email: user.email,
+          phone_number: user.phone_number,
+          user_id: user.id,
+          collection_address: collectionAddress,
+          category,
+          description,
+          items: items.filter((item) => item.item_name && item.quantity),
         };
-
+    
+        console.log("Submitting payload:", payload);
+    
         try {
-            const response = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}/api/donations/donate`,
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload),
-                }
-            );
-            if (response.ok) {
-                alert("Donation submitted successfully!");
-                // Reset form or redirect
-            } else {
-                throw new Error("Failed to submit donation");
+          const response = await fetch(
+            `${apiUrl}/donations/donate`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
             }
+          );
+          
+          if (response.ok) {
+            const responseData = await response.json();
+            console.log("Response data:", responseData);
+            alert("Donation submitted successfully!");
+            // Reset form or redirect
+          } else {
+            const errorData = await response.json();
+            console.error("Error response:", errorData);
+            throw new Error(`Failed to submit donation: ${errorData.message || response.statusText}`);
+          }
         } catch (error) {
-            console.error("Error:", error);
-            alert("Failed to submit donation. Please try again.");
+          console.error("Error:", error);
+          alert(`Failed to submit donation. ${error.message}`);
         }
-    };
-
+      };
     return (
         <div className="container mx-auto p-4 max-w-3xl">
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">

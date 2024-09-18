@@ -6,9 +6,9 @@ import { useState } from 'react';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'What We Do', href: '/#fwmanage' },
-  { label: 'Get Involved', href: '/login' },
   { label: 'About Us', href: '/about' },
+  { label: 'Get Involved', href: '/login' },
+  { label: 'Dashboard', href: '/dashboard' },
   { label: 'Contact Us', href: '/contact' },
 ];
 

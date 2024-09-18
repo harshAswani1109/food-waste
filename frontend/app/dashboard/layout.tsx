@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <>
         <UserProvider>
-          <div className="flex">
+          <div className="flex bg-white min-h-screen">
             <Sidebar />
             <main className="py-20 px-60">
               {children}
