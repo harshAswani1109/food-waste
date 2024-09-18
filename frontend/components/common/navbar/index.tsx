@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="sm:hidden">
+        <div className="sm:hidden bg-white">
           <div className="pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <Link

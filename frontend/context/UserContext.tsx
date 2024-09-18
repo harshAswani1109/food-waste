@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
+// User type definition
 interface User {
   id: number;
   name: string;
@@ -10,14 +11,17 @@ interface User {
   email: string;
 }
 
+// UserContext type definition
 interface UserContextType {
   user: User | null;
   setUser: (user: User | null) => void;
 }
 
+// Create the UserContext
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+// Provider component
+export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   return (
@@ -27,10 +31,11 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   );
 };
 
+// Custom hook to use UserContext
 export const useUser = () => {
   const context = useContext(UserContext);
-  if (context === undefined) {
-    throw new Error('useUser must be used within a UserProvider');
+  if (!context) {
+    throw new Error("useUser must be used within a UserProvider");
   }
   return context;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LANDING_CONTENT } from '@/app/constants';
+import { LANDING_CONTENT } from '@/constants';
 
 const Landing: React.FC = () => {
   return (
