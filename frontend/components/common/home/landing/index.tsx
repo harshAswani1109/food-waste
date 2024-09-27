@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { LANDING_CONTENT } from '@/constants';
 import { FaArrowRight, FaUsers, FaLightbulb, FaRocket, FaHeart } from 'react-icons/fa';
-
+import loginImage from "@/components/assets/login.jpg";
+import teamImage from "@/components/assets/register.jpg";
 const Landing: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
@@ -46,10 +47,10 @@ const Landing: React.FC = () => {
             </div>
             <div className="hidden md:block">
               <Image
-                src="/images/team-culture.jpg"
+                src={loginImage}
                 alt="Team culture"
                 width={400}
-                height={600}
+                height={400}
                 className="rounded-lg object-cover h-full w-full"
               />
             </div>
@@ -73,7 +74,7 @@ const Landing: React.FC = () => {
             </div>
             <div className="w-full md:w-1/2">
               <Image
-                src="/images/product-team.jpg"
+                src={teamImage}
                 alt="Product, Design & Development team"
                 width={600}
                 height={400}

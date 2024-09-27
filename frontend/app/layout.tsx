@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import { UserProvider } from "@/context/UserContext";
+import Footer from "@/components/common/footer";
 
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
           <div className="min-h-screen bg-[#d7eccb]">
             {children}
           </div>
+          <Footer />
         </UserProvider>
       </body>
     </html>
