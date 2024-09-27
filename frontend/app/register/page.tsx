@@ -33,7 +33,7 @@ const RegisterPage = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/users/register`,
+        `http://localhost:8080/api/users/register`,
         {
           method: "POST",
           headers: {

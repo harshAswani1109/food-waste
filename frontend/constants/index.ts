@@ -1,22 +1,33 @@
 export const LANDING_CONTENT = {
-    title: "Food Waste Management System",
-    subtitle: "Reducing waste, feeding communities, and saving the planet",
-    features: [
-      {
-        title: "Track Food Waste",
-        description: "Monitor and analyze your food waste patterns to identify areas for improvement.",
-      },
-      {
-        title: "Connect with Local Organizations",
-        description: "Donate excess food to local charities and food banks with ease.",
-      },
-      {
-        title: "Optimize Inventory",
-        description: "Use AI-powered predictions to optimize your food inventory and reduce overstock.",
-      },
-    ],
-    ctaTitle: "Join the Movement",
-    ctaDescription: "Start reducing food waste today and make a positive impact on the environment.",
-    ctaButtonText: "Get Started",
-    footerText: "© 2023 Food Waste Management System. All rights reserved.",
-  };
+  title: "We help online businesses grow. Together.",
+  cultureItems: [
+    {
+      icon: "flexible", // You'll need to implement an icon component or use an icon library
+      title: "Flexible & Understanding",
+      description: "We are all remote with collaboration spaces in NY and Miami. Employees have the autonomy to build their workflow. We understand that life happens and flexibility is important."
+    },
+    {
+      icon: "growth",
+      title: "Growth & Development",
+      description: "There's a wealth of growth potential to develop your career in the long term. We provide the tools and resources to help you succeed."
+    },
+    {
+      icon: "transparent",
+      title: "Open & Transparent",
+      description: "Everyone stays informed on all the latest projects and everyone's input is welcome."
+    },
+    {
+      icon: "supportive",
+      title: "Helpful & Supportive",
+      description: "As part of Refersion team, you'll never have to go it alone."
+    }
+  ],
+  teams: [
+    {
+      name: "Product, Design & Development",
+      description: "We build and deliver talent and people programs to invest, develop, and grow our employees so that Refersion is viewed as a place that provides a long-term, stable, and gratifying career journey.",
+      imagePath: "/path-to-product-team-image.jpg"
+    }
+    // Add more teams here if needed
+  ]
+};
